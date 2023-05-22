@@ -1,0 +1,663 @@
+/* Base CSS */
+:root {
+  --accent: rgb(249, 207, 0);
+  --accent-8: rgba(249, 207, 0, 0.8);
+  --accent-5: rgba(249, 207, 0, 0.5);
+  --accent-25: rgba(249, 207, 0, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+  color: white;
+  padding-top: 43px;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a:active, a:focus {
+  outline: none;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  background: black;
+}
+
+.dropdown-menu {
+  background: black;
+  border: 1px solid white;
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, .5);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: black;
+  color: rgba(255, 255, 255, .75);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background: black;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+li.nav-item {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+@media (min-width: 992px) {
+  .nav-item.active {
+    border-bottom: 3px solid var(--accent);
+  }
+}
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-brand {
+  color: white;
+  margin-left: 4px;
+}
+
+.footer-brand span {
+  color: var(--accent);
+}
+
+.footer-brand:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+footer .d-block {
+  margin-left: 4px;
+}
+
+footer .d-flex {
+  padding: 0 15px;
+}
+
+.footer-link {
+  color: white;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.footer-link-sep {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.link {
+  color: white;
+}
+
+.link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Override Bootstrap Styles */
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-8);
+  border-color: var(--accent-8);
+  color: black;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem var(--accent-5);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: black;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: 0 0 0 .2rem var(--accent-5);
+}
+
+.contact-button {
+  border: 1px solid var(--accent);
+  border: 1px solid var(--accent-5);
+  color: #eee;
+  padding: 2rem;
+  width: 100%
+}
+
+.contact-button:hover {
+  border: 1px solid var(--accent);
+  color: #fff;
+}
+
+/* home page */
+#hero {
+  background-attachment: fixed;
+  background-image: url("https://img.cleberg.net/space-wiki/hero-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 65vh;
+}
+
+#hero div.text-center {
+  margin-top: 3rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+#hero-title {
+  font-size: 5rem;
+}
+
+@media (max-width: 768px) {
+  #hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero-title {
+    font-size: 2rem;
+  }
+}
+
+#hero-subtitle {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+#explore-content {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#explore-options {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.explore-card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: inherit;
+  color: inherit;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.explore-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.explore-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#apod-wrapper {
+  margin-bottom: 4rem;
+}
+
+#apod-container {
+  display: none;
+}
+
+#apod-credit {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+#apod-img, #apod-vid {
+  display: none;
+  max-width: 95vw;
+  max-height: 80vh;
+  margin: 2rem auto auto auto;
+}
+
+#apod-explanation {
+  font-size: 0.9rem;
+}
+
+/* planets */
+.planet-container {
+  min-height: calc(100vh - 5rem);
+}
+
+.planets-nav {
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: max-content;
+  padding: 0.25rem 2rem;
+  border-radius: 0.25rem;
+}
+
+.planets-nav-item {
+  margin: 0.5rem 0;
+}
+
+.planets-nav-item:not(.active) {
+  color: var(--accent);
+}
+
+.planets-nav-item.active {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.planets-nav-item.active:before {
+  color: #fff;
+  content: "<";
+  padding: 0 1rem;
+}
+
+.planets-nav-item.active:after {
+  color: #fff;
+  content: ">";
+  padding: 0 1rem;
+}
+
+#sun-breadcrumb:before {
+  content: none;
+}
+
+#neptune-breadcrumb:after {
+  content: none;
+}
+
+.planet-about {
+  font-weight: bold;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.planet-title {
+  margin-bottom: 4rem;
+}
+
+.planet-description {
+  margin-bottom: 4rem;
+}
+
+.planet-stats {
+  margin-bottom: 2rem;
+}
+
+.planet-link {
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.planet-link:hover {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+}
+
+.solar-system {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.solar-system>h1 {
+  margin-bottom: 4rem;
+}
+
+.planet-img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .planet-img {
+    margin: 3rem auto;
+  }
+}
+
+/* gallery */
+#search_container {
+  margin-top: 5rem;
+}
+
+#temporary-banner {
+  text-align: center;
+  padding: 5rem 3rem;
+  background: #222;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+}
+
+#search_container {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+#search_row {
+  margin-bottom: 4rem;
+}
+
+#search_row div {
+  margin-top: 0.5rem;
+}
+
+#search_input {
+  background: inherit;
+  color: inherit;
+  height: 3rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#search_button {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-card {
+  background: inherit;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.gallery-card .card-title {
+  margin: 0;
+}
+
+/* about */
+#meet-us, #contact-us {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+#banner-title {
+  margin-bottom: 2rem;
+}
+
+#banner-title a {
+  color: var(--accent);
+}
+
+#meet-us-card {
+  text-align: left;
+  width: 100%;
+  background: inherit;
+  color: inherit;
+}
+
+#meet-us-card .card-img-left {
+  display: block;
+  height: 200px;
+  width: 200px;
+  border: 1px solid white;
+  margin-bottom: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#meet-us-card .card-link {
+  color: var(--accent);
+}
+
+#meet-us-card .card-link:hover {
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.form-control {
+  background: inherit;
+  color: inherit;
+  border: 1px solid white;
+}
+
+.form-control:focus {
+  background: inherit;
+  color: inherit;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 .2rem var(--accent-25);
+}
+
+/* missions */
+#timeline-page-container {
+  margin: 5rem auto;
+}
+
+#centered-timeline {
+  margin: 4rem auto;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
+  line-height: inherit;
+}
+
+h2.timeline-title {
+  color: var(--accent);
+}
+
+h3.timeline-title {
+  color: white;
+}
+
+/*----- TIMELINE ITEM -----*/
+.timeline-item {
+  padding-left: 40px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/*----- TIMELINE INFO -----*/
+.timeline-info {
+  font-size: 12px;
+  font-weight: 700;
+  /* letter-spacing: 3px; */
+  margin: 0 0 .5em 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/*----- TIMELINE MARKER -----*/
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+}
+
+.timeline-marker:before {
+  background: #f9cf00;
+  border: 3px solid transparent;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 15px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 15px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.timeline-marker:after {
+  content: "";
+  width: 3px;
+  background: #CCD5DB;
+  display: block;
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 6px;
+}
+
+.timeline-item:last-child .timeline-marker:after {
+  content: none;
+}
+
+.timeline-item:not(.period):hover .timeline-marker:before {
+  background: transparent;
+  border: 3px solid #f9cf00;
+}
+
+/*----- TIMELINE CONTENT -----*/
+.timeline-content {
+  padding-bottom: 40px;
+}
+
+.timeline-content p:last-child {
+  margin-bottom: 0;
+}
+
+/*----- TIMELINE PERIOD -----*/
+.period {
+  padding: 0;
+}
+
+.period .timeline-info {
+  display: none;
+}
+
+.period .timeline-marker:before {
+  background: transparent;
+  content: "";
+  width: 15px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  top: 0;
+  bottom: 30px;
+  position: absolute;
+  border-top: 3px solid #CCD5DB;
+  border-bottom: 3px solid #CCD5DB;
+}
+
+.period .timeline-marker:after {
+  content: "";
+  height: 32px;
+  top: auto;
+}
+
+.period .timeline-content {
+  padding: 40px 0 70px;
+}
+
+.period .timeline-title {
+  margin: 0;
+}
+
+/*----------------------------------------------
+    MOD: TIMELINE CENTERED
+----------------------------------------------*/
+@media (min-width: 992px) {
+
+  .timeline-centered,
+  .timeline-centered .timeline-item,
+  .timeline-centered .timeline-info,
+  .timeline-centered .timeline-marker,
+  .timeline-centered .timeline-content {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .timeline-centered .timeline-item {
+    padding-bottom: 40px;
+    overflow: hidden;
+  }
+
+  .timeline-centered .timeline-marker {
+    position: absolute;
+    left: 50%;
+    margin-left: -7.5px;
+  }
+
+  .timeline-centered .timeline-info,
+  .timeline-centered .timeline-content {
+    width: 50%;
+  }
+
+  .timeline-centered>.timeline-item:nth-child(odd) .timeline-info {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  .timeline-centered>.timeline-item:nth-child(odd) .timeline-content {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .timeline-centered>.timeline-item:nth-child(even) .timeline-info {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .timeline-centered>.timeline-item:nth-child(even) .timeline-content {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  .timeline-centered>.timeline-item.period .timeline-content {
+    float: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .timeline-centered .timeline-item.period {
+    padding: 50px 0 90px;
+  }
+
+  .timeline-centered .period .timeline-marker:after {
+    height: 30px;
+    bottom: 0;
+    top: auto;
+  }
+
+  .timeline-centered .period .timeline-title {
+    left: auto;
+  }
+}
