@@ -3,7 +3,7 @@ Space Wiki is an informational wiki about space and the planets of our solar sys
 
 ## Preview
 #### Home
-![](https://img.cmc.pub/space-wiki/preview-spacewiki-home.png)
+![](https://media.githubusercontent.com/media/ccleberg/img/main/space-wiki/preview-spacewiki-home.png)
 
 #### Planet Info Page
-![](https://img.cmc.pub/space-wiki/preview-spacewiki-planets.png)
+![](https://media.githubusercontent.com/media/ccleberg/img/main/space-wiki/preview-spacewiki-planets.png)
