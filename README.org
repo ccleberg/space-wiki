@@ -1,0 +1,8 @@
+#+title: space wiki
+
+* what
+informational wiki about space and the planets of our solar system.
+
+* preview
+home:  https://img.cleberg.net/space-wiki/preview-spacewiki-home.png
+planet: https://img.cleberg.net/space-wiki/preview-spacewiki-planets.png
